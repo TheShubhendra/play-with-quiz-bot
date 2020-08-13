@@ -37,7 +37,7 @@ def fetch(update,context):
   options.insert(i,ans)
   print(*options)
   options = [decodebytes(x.encode()).decode() for x in options]
-  context.bot.send_poll(chat_id=update.message.chat_id, question=q,options=options,type="quiz",is_anonymous=True,correct_option_id=i)
+  context.bot.send_poll(chat_id=update.message.chat_id, question=q,options=options,type="quiz",is_anonymous=False,correct_option_id=i)
     
   
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
