@@ -15,7 +15,7 @@ def start(update,context):
     context.bot.send_message(update.message.chat_id,message)
   
 def fetch(update,context):
-  
+  print(update.message.chat_id)
   
   text= update.message.text
   for x in topics:
@@ -35,7 +35,6 @@ def fetch(update,context):
   ans = res["correct_answer"]
   i = random.randint(0,3)
   options.insert(i,ans)
-  print(*options)
   options = [decodebytes(x.encode()).decode() for x in options]
   context.bot.send_poll(chat_id=update.message.chat_id, question=q,options=options,type="quiz",is_anonymous=False,correct_option_id=i)
     
