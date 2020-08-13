@@ -2,7 +2,9 @@ from requests import get
 from telegram.ext import Updater , CommandHandler, MessageHandler, Filters
 import logging
 import random
+import os
 from base64 import decodebytes
+
 TOKEN = os.environ.get("TOKEN")
 PORT = os.environ.get("PORT",5000)
 def start(update,context):
