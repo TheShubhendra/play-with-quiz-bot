@@ -43,7 +43,7 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 updater = Updater(TOKEN,use_context=True)
 dispatcher = updater.dispatcher
 
-handler = CommandHandler(topics,fetch)
+handler = CommandHandler(topics+["random"],fetch)
 start_handler = CommandHandler('start',start)
 dispatcher.add_handler(handler)
 dispatcher.add_handler(start_handler)
