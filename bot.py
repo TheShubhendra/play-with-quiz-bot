@@ -16,7 +16,7 @@ def start(update,context):
   
 def fetch(update,context):
   print(update.message.chat_id)
-  cat = topics[random.randint(0,len(topics)-1)]  
+  cat = random.randint(9,len(topics)+8)
   text= update.message.text
   for x in topics:
     if x in text:
