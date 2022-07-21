@@ -55,8 +55,7 @@ start_handler = CommandHandler('start', start)
 dispatcher.add_handler(handler)
 dispatcher.add_handler(start_handler)
 if WEBHOOK_URL is not None:
-    updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=TOKEN)
-    updater.bot.setWebhook(WEBHOOK_URL + TOKEN)
+    updater.start_webhook(listen="0.0.0.0", port=int(PORT), url_path=TOKEN, webhook_url=WEBHOOK_URL)
 else:
     updater.start_polling()
 updater.idle()
